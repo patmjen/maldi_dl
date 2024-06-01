@@ -1,0 +1,9 @@
+name: cnn
+classname: cnn
+in_channels: 1
+hidden_channels: [16, 16, 16]
+kernel_sizes: [17, 17, 17]
+strides: [8, 8, 8]
+activation: PReLU
+norm: Batch
+seed: 1337

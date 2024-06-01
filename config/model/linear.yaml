@@ -1,0 +1,4 @@
+name: linear
+classname: linear
+weight_init: xavier
+seed: 1337

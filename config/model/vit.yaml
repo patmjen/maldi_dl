@@ -1,0 +1,14 @@
+name: vit
+classname: vit
+patch_size: 256
+dim: 1024
+depth: 2
+heads: 4
+mlp_dim: 512
+channels: 1
+dim_head: 64
+dropout: 0.0
+weight_init: xavier
+should_pad: false
+init_norm: spectrum
+seed: 1337

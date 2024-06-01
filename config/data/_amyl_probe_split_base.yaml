@@ -1,0 +1,34 @@
+_base_name: Amyliodosis_probe-split
+_short_base_name: 'amyl_p'
+_base_path: /data/Amyliodosis/split/probe-split
+classes: ['AL_Control', 'ATTR']
+compute_probe_stats: true
+spectrum_len: 8666
+filter_train: true
+filter_val: true
+filter_test: ${.filter_val}
+sampler: class_even
+train_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+#  - log_transform:
+#      eps: 1e-8
+#  - spectra_dropout:
+#      p: 0.1
+  - scaled_gaussian_noise:
+      std_factor: 0.05
+  - random_scaling:
+      scale: 0.5
+train_batch_augmentations:
+  - mix_up:
+      alpha: 0.1
+val_test_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+#  - log_transform:
+#      eps: 1e-8
+val_test_batch_augmentations: []

@@ -1,0 +1,3 @@
+name: linear_warmup_cosine_decay
+warmup_iters: 10
+start_factor: 0.01

@@ -1,0 +1,35 @@
+_base_name: Dresden_2class_onlytumor_probe-split
+_short_base_name: 'dres2cot'
+_base_path: /data/Dresden/2class_onlytumor_split/probe_split
+classes: ['pan_bil', 'intestinal']
+compute_probe_stats: true
+spectrum_len: 13350
+filter_train: true
+filter_val: true
+filter_test: ${.filter_val}
+sampler: class_even
+#sampler: random
+train_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+#  - log_transform:
+#      eps: 1e-8
+#  - spectra_dropout:
+#      p: 0.1
+  - scaled_gaussian_noise:
+      std_factor: 0.05
+  - random_scaling:
+      scale: 0.5
+train_batch_augmentations:
+  - mix_up:
+      alpha: 0.1
+val_test_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+#  - log_transform:
+#      eps: 1e-8
+val_test_batch_augmentations: []

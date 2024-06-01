@@ -1,0 +1,8 @@
+name: 'cross_entropy'
+weight: 'none'
+#weight: [1.0, 6.206, 3.217]  # D resden 3 class
+#weight: [1.0, 3.217]  # Dresden 2 class
+#weight: [1.0, 10.0]  # Dresden 2 class, manual
+#weight: [10.0, 1.0]  # Dresden 2 class, tumor only, manual
+#weight: [1.0, 2.0, 4.0]  # Dresden, 3 class, only tumor
+label_smoothing: 0.0

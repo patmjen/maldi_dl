@@ -1,0 +1,6 @@
+defaults:
+  - _amyl_probe_split_base
+
+name: ${._base_name}_III
+short_name: ${._short_base_name}_III
+path: ${._base_path}_III/

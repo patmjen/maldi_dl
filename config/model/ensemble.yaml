@@ -1,0 +1,14 @@
+defaults:
+ - /model@vit1: vit
+ - /model@vit2: vit
+ - /model@vit3: vit
+
+vit2:
+  seed: 123456
+vit3:
+  seed: 12345678
+
+name: ensemble
+classname: ensemble
+combine_method: sum
+seed: 1337

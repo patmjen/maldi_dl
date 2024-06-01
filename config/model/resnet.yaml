@@ -1,0 +1,9 @@
+name: resnet
+classname: resnet
+in_channels: 1
+init_pool_size: 4
+hidden_channels: [16, 8]
+kernel_sizes: [201, 101]
+strides: [1, 1]
+assume_padded_to: 256
+seed: 1337

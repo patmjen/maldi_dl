@@ -1,0 +1,30 @@
+defaults:
+  - data: ovarian_probe_split_I
+  - model: vit
+  - loss: cross_entropy
+  - optimizer: adamw
+  - scheduler: linear_warmup
+
+  # Turn off output files for hydra
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+results: /results/
+train_batch_size: 128
+accumulate_grad_batches: 2
+epochs: 100
+checkpoint_warmup_epochs: 0
+checkpoint_moniter_metric: val_bal_acc
+checkpoint_moniter_mode: max
+val_batch_size: ${train_batch_size}
+test_batch_size: ${val_batch_size}
+devices: 1
+_print_cfg: true
+_print_model: true
+_print_data: true
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

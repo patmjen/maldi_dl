@@ -1,0 +1,7 @@
+name: mlp
+classname: mlp
+hidden_channels: [1024, 512, 256]
+activation: PReLU
+norm: Batch
+weight_init: xavier
+seed: 1337
