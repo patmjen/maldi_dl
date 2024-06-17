@@ -1,5 +1,5 @@
 defaults:
-  - data: ovarian_probe_split_I
+  - data: driams_demo
   - model: vit
   - loss: cross_entropy
   - optimizer: adamw
