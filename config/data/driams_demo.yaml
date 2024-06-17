@@ -1,0 +1,28 @@
+name: DRIAMS_demo_case_split
+short_name: 'driams'
+path: maldidata/
+classes: ['Susceptible', 'Resistant']
+compute_probe_stats: true
+spectrum_len: 1600
+filter_train: true
+filter_val: true
+filter_test: ${.filter_val}
+sampler: class_even
+train_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+  - scaled_gaussian_noise:
+      std_factor: 0.05
+  - random_scaling:
+      scale: 0.5
+train_batch_augmentations:
+  - mix_up:
+      alpha: 0.1
+val_test_sample_augmentations:
+  - tic_normalize:
+  - pad_to_divisible:
+      d: 256
+      value: 0.0
+val_test_batch_augmentations: []
