@@ -78,7 +78,7 @@ def main(cfg):
     # Make result folder
     time_now = datetime.datetime.now()
     save_path = join(
-        '/results/',
+        cfg.results,
         cfg.data.short_name,
         cfg.model.name,
         datetime.date.today().isoformat(),
@@ -149,7 +149,7 @@ def main(cfg):
     # Build model and setup trainer
     print('Create logger')
     logger = TensorBoardLogger(
-        save_dir="/results/tensorboard",
+        save_dir=join(cfg.results, "tensorboard"),
         name=join(
             cfg.data.short_name,
             cfg.model.name,

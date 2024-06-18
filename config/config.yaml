@@ -10,7 +10,7 @@ defaults:
   - override hydra/hydra_logging: disabled
   - override hydra/job_logging: disabled
 
-results: /results/
+results: results/
 train_batch_size: 128
 accumulate_grad_batches: 2
 epochs: 100
