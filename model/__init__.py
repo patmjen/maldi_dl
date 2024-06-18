@@ -11,7 +11,6 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from typing import MutableSequence
-from arrgh import arrgh # DEBUG
 
 import augmentation
 from .vit import SimpleViT
